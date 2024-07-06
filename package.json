@@ -2,9 +2,9 @@
   "name": "hc-stock",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.ts",
   "scripts": {
-    "dev": "node --trace-warnings --watch src/server.ts",
+    "dev": "cross-env NODE_ENV=local nodemon --transpile-only src/server.ts",
     "build": "tsc",
     "compose": "docker-compose up -d",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,9 +14,12 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.14.10",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.4",
     "typescript": "^5.5.3"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "pg": "^8.12.0",
     "reflect-metadata": "^0.2.2",
     "typeorm": "^0.3.20"
