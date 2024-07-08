@@ -14,6 +14,9 @@ export class Accounts {
     @Column({ unique: true, nullable: false })
     email!: string;
 
+    @Column({ unique: true, nullable: false })
+    password!: string;
+
     @Column({ nullable: false })
     role_id!: number;
 
