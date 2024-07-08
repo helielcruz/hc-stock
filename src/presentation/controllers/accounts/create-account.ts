@@ -7,6 +7,6 @@ export class CreateAccountController implements Controller {
 
     async handle(request: CreateAccountDomain.Params): Promise<Controller.Result> {
         const account = await this.accountRegistration.create(request)
-        return { statusCode: 200, body: account}
+        return { body: account }
     }
 }

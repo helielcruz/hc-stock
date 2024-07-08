@@ -3,8 +3,7 @@ export interface Controller {
 }
 
 export namespace Controller {
-    export type Result = { 
-        statusCode: number
+    export type Result = {
         body: any
     }
 }
