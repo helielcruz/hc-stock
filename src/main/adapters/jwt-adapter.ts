@@ -9,10 +9,10 @@ export const jwtGenerateToken = (id: number, email: string) => {
 }
 
 export const jwtVerifyToken = (token: string) => {
-    jwt.verify(token, env.secretKey, (err, decoded) => {
-
-        if (err)throw new UnauthorizedError()
-        
-        return decoded
-    });
+    try {
+        const decoded = jwt.verify(token, env.secretKey);
+        return decoded;
+    } catch (err) {
+        throw new UnauthorizedError();
+    }
 }
