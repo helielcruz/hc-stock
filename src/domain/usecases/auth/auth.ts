@@ -9,7 +9,12 @@ export namespace AccountAuthentication {
     }
 
     export type Result = {
-        id: number
+        id: number;
+        name: string;
+        lastname: string;
+        email: string;
+        password?: string;
+        role_id: number;
         token: string
     } | boolean
 }
