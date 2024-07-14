@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { makeCreateAccount, makeUpdateAccount } from '../factories/controllers/accounts'
+import { makeCreateAccount, makeGetOneAccountController, makeUpdateAccount } from '../factories/controllers/accounts'
 import { adaptExpressRoute } from '../adapters/express-routes'
 import { authMiddleware } from '../middlewares/auth'
 
@@ -18,6 +18,7 @@ export default (routerInstance: Router) => {
      *              description: Request Ok
      * 
      */
+    routerInstance.get('/account/:email', authMiddleware, adaptExpressRoute(makeGetOneAccountController()))
     routerInstance.post('/account', authMiddleware, adaptExpressRoute(makeCreateAccount()))
     routerInstance.patch('/account', authMiddleware, adaptExpressRoute(makeUpdateAccount()))
 
