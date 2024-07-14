@@ -1,10 +1,10 @@
-import { AccountRegistration } from "../../../../data/usecases/accounts/register"
-import { AccountsRepository } from "../../../../infra/db/typeorm/repositories/accounts/accounts"
-import { CreateAccountController } from "../../../../presentation/controllers/accounts/create-account"
+import { ItemRegister } from "../../../../data/usecases/items"
+import { ItemsRepository } from "../../../../infra/db/typeorm/repositories/items/items"
+import { CreateItemController } from "../../../../presentation/controllers/items"
 
-export const makeCreateAccount = () => {
-    const accountsRepository = new AccountsRepository()
-    const accountRegistration = new AccountRegistration(accountsRepository)
+export const makeCreateItem = () => {
+    const itemsRepository = new ItemsRepository()
+    const itemResgister = new ItemRegister(itemsRepository)
 
-    return new CreateAccountController(accountRegistration)
+    return new CreateItemController(itemResgister)
 }

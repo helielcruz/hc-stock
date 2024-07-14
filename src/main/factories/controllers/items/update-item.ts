@@ -1,10 +1,10 @@
-import { UpdateAccount } from "../../../../data/usecases/accounts"
-import { AccountsRepository } from "../../../../infra/db/typeorm/repositories/accounts/accounts"
-import { UpdateAccountController } from "../../../../presentation/controllers/accounts"
+import { ItemsRepository } from "../../../../infra/db/typeorm/repositories/items/items"
+import { UpdateItem } from "../../../../data/usecases/items"
+import { UpdateItemController } from "../../../../presentation/controllers/items"
 
 export const makeUpdateAccount = () => {
-    const accountsRepository = new AccountsRepository()
-    const updateAccount = new UpdateAccount(accountsRepository)
+    const itemsRepository = new ItemsRepository()
+    const updateItem = new UpdateItem(itemsRepository)
 
-    return new UpdateAccountController(updateAccount)
+    return new UpdateItemController(updateItem)
 }
