@@ -8,7 +8,7 @@ export const adaptExpressRoute = (controller: Controller) => {
             ...(req.params || {}),
             ...(req.query || {})
         }
-        const { body } = await controller.handle(request)
+        const body = await controller.handle(request)
         
         res.json(body)
     }
