@@ -7,7 +7,6 @@ export class ItemRegister implements CreateItemDomain {
     constructor(protected readonly itemsRepositoryProtocol: ItemsRepositoryProtocol){}
 
     async create(params: CreateItemDomain.Params): Promise<CreateItemDomain.Result> {
-        params.password = bcryptHashGenerate(params.password)
         return (await this.itemsRepositoryProtocol.create(params) ? true : false)
     }
 }
