@@ -7,8 +7,8 @@ const router = Router()
 
 export default (routerInstance: Router) => {
 
-    routerInstance.get('/item/:id', authMiddleware, adaptExpressRoute(makeGetOneItemController()))
-    routerInstance.post('/item', authMiddleware, adaptExpressRoute(makeCreateItemController()))
-    routerInstance.patch('/item', authMiddleware, adaptExpressRoute(makeUpdateItemController()))
+    routerInstance.get('/items/:id', authMiddleware, adaptExpressRoute(makeGetOneItemController()))
+    routerInstance.post('/items', authMiddleware, adaptExpressRoute(makeCreateItemController()))
+    routerInstance.patch('/items', authMiddleware, adaptExpressRoute(makeUpdateItemController()))
 
 }

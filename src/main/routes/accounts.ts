@@ -18,8 +18,8 @@ export default (routerInstance: Router) => {
      *              description: Request Ok
      * 
      */
-    routerInstance.get('/account/:email', authMiddleware, adaptExpressRoute(makeGetOneAccountController()))
-    routerInstance.post('/account', authMiddleware, adaptExpressRoute(makeCreateAccount()))
-    routerInstance.patch('/account', authMiddleware, adaptExpressRoute(makeUpdateAccount()))
+    routerInstance.get('/accounts/:email', authMiddleware, adaptExpressRoute(makeGetOneAccountController()))
+    routerInstance.post('/accounts', authMiddleware, adaptExpressRoute(makeCreateAccount()))
+    routerInstance.patch('/accounts', authMiddleware, adaptExpressRoute(makeUpdateAccount()))
 
 }
