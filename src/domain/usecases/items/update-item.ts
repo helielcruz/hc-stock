@@ -7,16 +7,8 @@ export namespace IUpdateItem {
         id: number
         title?: string
         description?: string
-        category: {
-            label: string
-        }
-        account: {
-            name: string
-            lastname: string
-            email: string
-        }
-        password?: string
-        role_id?: number
+        category_id?: number
+        account_id: number
     }
     export type Result = boolean
 }
