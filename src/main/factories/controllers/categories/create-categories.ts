@@ -1,7 +1,4 @@
-import { CategoriesRepository } from "@/infra/db/typeorm/repositories/categories"
-import { ItemRegister } from "../../../../data/usecases/items"
-import { ItemsRepository } from "../../../../infra/db/typeorm/repositories/items/items"
-import { CreateItemController } from "../../../../presentation/controllers/items"
+import { CategoriesRepository } from "../../../../infra/db/typeorm/repositories/categories"
 import { CategoriesRegister } from "../../../../data/usecases/categories"
 import { CreateCategoriesController } from "../../../../presentation/controllers/categories"
 
