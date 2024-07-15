@@ -1,5 +1,5 @@
 export interface IGetCategories {
-    get(): Promise<IGetCategories.Result>
+    get(): Promise<IGetCategories.Result[]>
 }
 
 export namespace IGetCategories {
