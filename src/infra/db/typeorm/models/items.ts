@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinTable } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinTable, OneToOne, OneToMany } from "typeorm"
 import { Categories } from "./categories";
 import { Accounts } from "./accounts";
 
@@ -13,7 +13,7 @@ export class Items {
     @Column({ nullable: false })
     description!: string;
 
-    @Column({ unique: true, nullable: false })
+    @Column({ nullable: false })
     category_id!: number;
 
     @Column({ nullable: false })
@@ -25,11 +25,11 @@ export class Items {
     @UpdateDateColumn({ nullable: false })
     updated_at!: Date;
 
-    @ManyToOne(() => Accounts, (account: any) => account.id === 'account_id')
+    @ManyToOne(() => Accounts, (account: any) => account.id)
     @JoinTable()
     account: Accounts
 
-    @ManyToOne(() => Categories, (category: any) => category.id === 'category_id')
+    @ManyToOne(() => Categories, (category: any) => category.id)
     @JoinTable()
     category: Categories
 }
