@@ -3,7 +3,7 @@ import { AppDataSource } from "../../config/data-source";
 import { Categories, Items } from "../../models";
 import { BadRequestError } from "../../../../../presentation/helpers/api-errors";
 
-export class ItemsRepository implements CategoriesRepositoryProtocol {
+export class CategoriesRepository implements CategoriesRepositoryProtocol {
     async create(params: CreateCategoriesRepository.Params): Promise<CreateCategoriesRepository.Result> {
         
         Object.values(params).some((value, index) => {
